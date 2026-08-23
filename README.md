@@ -1,3 +1,6 @@
+<<<<<<< HEAD
+=======
+>>>>>>> origin/main
 # The Perfect Date 💕
 
 A creative interactive dating personality quiz. Answer 7 real-life
@@ -112,3 +115,7 @@ Backend API
 
 Version 1 is intentionally 100% frontend — no server, no build tools,
 no dependencies.
+=======
+# the-perfect-date
+testing repo for LR 
+>>>>>>> 0b4cb5ab545b8e0e49c9cea8bb15411c0a33b41f
