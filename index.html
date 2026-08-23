@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Perfect Date 💕</title>
+  <meta name="description" content="A few choices. One personality. Your perfect date awaits." />
+
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/animations.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+</head>
+<body>
+  <div class="ambient-bg" aria-hidden="true"></div>
+  <div class="floating-hearts" id="floating-hearts" aria-hidden="true"></div>
+
+  <main class="app-shell">
+    <!-- ============ LANDING SCREEN ============ -->
+    <section id="screen-landing" class="screen active" aria-label="Welcome">
+      <div class="glass-card">
+        <div class="landing-emoji" aria-hidden="true">💕</div>
+        <h1 class="landing-title">THE PERFECT DATE</h1>
+        <p class="landing-subtitle">
+          A few choices.<br />
+          One personality.<br />
+          Your perfect date awaits.
+        </p>
+
+        <div class="field-group">
+          <label class="field-label" for="name-input">What's your name?</label>
+          <input
+            type="text"
+            id="name-input"
+            class="name-input"
+            placeholder="Enter your name"
+            autocomplete="given-name"
+            maxlength="30"
+            data-autofocus
+          />
+          <span id="name-error" class="field-error" role="alert"></span>
+        </div>
+
+        <button type="button" id="start-btn" class="btn btn-primary">
+          Start the Date ❤️
+        </button>
+
+        <p class="landing-tagline">
+          7 questions.<br />
+          No wrong answers.<br />
+          Just vibes.
+        </p>
+      </div>
+    </section>
+
+    <!-- ============ QUIZ SCREEN ============ -->
+    <section id="screen-quiz" class="screen" aria-label="Quiz" aria-hidden="true">
+      <div class="glass-card">
+        <div class="quiz-header">
+          <span id="question-counter" class="question-counter">QUESTION 1 / 7</span>
+          <div class="progress-track" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-label="Quiz progress">
+            <div id="progress-fill" class="progress-fill"></div>
+          </div>
+        </div>
+
+        <h2 id="question-prompt" class="question-prompt"></h2>
+
+        <div id="options-grid" class="options-grid" role="group" aria-label="Answer options"></div>
+      </div>
+    </section>
+
+    <!-- ============ REVEAL SCREEN ============ -->
+    <section id="screen-reveal" class="screen reveal-screen" aria-label="Calculating result" aria-hidden="true">
+      <div class="glass-card" aria-live="polite">
+        <div id="reveal-emoji" class="reveal-emoji">❤️</div>
+        <p id="reveal-text" class="reveal-text">Analyzing your choices...</p>
+      </div>
+    </section>
+
+    <!-- ============ RESULT SCREEN ============ -->
+    <section id="screen-result" class="screen" aria-label="Your result" aria-hidden="true">
+      <div class="glass-card">
+        <p class="result-eyebrow">YOUR DATE PERSONALITY</p>
+        <p id="result-greeting" class="result-greeting"></p>
+
+        <div id="result-emoji" class="result-emoji">💕</div>
+        <h2 id="result-title" class="result-title"></h2>
+        <p id="result-tagline" class="result-tagline"></p>
+        <p id="result-description" class="result-description"></p>
+
+        <h3 class="section-heading">PERSONALITY BREAKDOWN</h3>
+        <div id="stats-list" class="stats-list"></div>
+
+        <h3 class="section-heading">YOUR PERFECT DATE</h3>
+        <ul id="date-itinerary" class="itinerary-list"></ul>
+
+        <div class="result-actions">
+          <button type="button" id="share-btn" class="btn btn-primary">
+            💌 Share My Result
+          </button>
+          <span id="share-confirmation" class="share-confirmation" role="status"></span>
+          <button type="button" id="restart-btn" class="btn btn-secondary">
+            🔄 Try Again
+          </button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="js/questions.js"></script>
+  <script src="js/results.js"></script>
+  <script src="js/storage.js"></script>
+  <script src="js/animations.js"></script>
+  <script src="js/share.js"></script>
+  <script src="js/game.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

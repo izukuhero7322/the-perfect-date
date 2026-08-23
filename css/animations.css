@@ -1,0 +1,124 @@
+/* ==========================================================
+   animations.css — keyframes and animation utility classes
+   ========================================================== */
+
+/* Floating hearts / sparkles drifting upward */
+@keyframes float-up {
+  0% {
+    transform: translateY(0) translateX(0) rotate(0deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.6;
+  }
+  90% {
+    opacity: 0.4;
+  }
+  100% {
+    transform: translateY(-110vh) translateX(24px) rotate(25deg);
+    opacity: 0;
+  }
+}
+
+/* Fade in */
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Fade + slide up, used for screens entering */
+@keyframes fade-slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Scale in, used for the result card and reveal emoji */
+@keyframes scale-in {
+  from {
+    opacity: 0;
+    transform: scale(0.85);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Soft glow pulse behind emoji / hero elements */
+@keyframes glow-pulse {
+  0%,
+  100% {
+    filter: drop-shadow(0 0 12px rgba(255, 79, 154, 0.35));
+  }
+  50% {
+    filter: drop-shadow(0 0 26px rgba(255, 79, 154, 0.6));
+  }
+}
+
+/* Heartbeat, used sparingly on the reveal emoji */
+@keyframes heartbeat {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  25% {
+    transform: scale(1.15);
+  }
+  40% {
+    transform: scale(1);
+  }
+  55% {
+    transform: scale(1.1);
+  }
+}
+
+.screen.active .glass-card {
+  animation: fade-slide-up 0.6s var(--ease-soft) both;
+}
+
+.landing-emoji {
+  animation: glow-pulse 3.4s ease-in-out infinite;
+}
+
+.reveal-emoji {
+  animation: heartbeat 1.4s ease-in-out infinite;
+}
+
+.result-emoji {
+  animation: scale-in 0.5s var(--ease-soft) both, glow-pulse 3.4s ease-in-out infinite 0.5s;
+}
+
+.question-enter .question-prompt,
+.question-enter .options-grid {
+  animation: fade-slide-up 0.4s var(--ease-soft) both;
+}
+
+.reveal-text {
+  animation: fade-in 0.5s var(--ease-soft) both;
+}
+
+/* Respect users who've asked for less motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .floating-particle {
+    display: none;
+  }
+}
